@@ -14,7 +14,8 @@ The UI presents a visually engaging timeline, similar to a Gantt chart, where ea
 - **Book Timeblocks:**
     - Display basic information (title, author) for easy scanning.
     - Clicking a timeblock opens a modal with detailed book information.
-- **Search and Filter:** A search bar and filter controls to quickly find books by title, author, or other attributes.
+- **Search and Filter:** A search bar and filter controls to quickly find books by title, author, or other attributes, and to refine results by country and story time period.
+- **Timeline Management:** Users can add multiple books from search results to the timeline (including multi-select) and remove individual books from the timeline directly from either the search results list or the book timeblock.
 - **Responsive Design:** The layout will adapt to various screen sizes, ensuring a seamless experience on desktop and mobile devices.
 
 ## Features
