@@ -266,7 +266,7 @@ export const PERIODS: HistoricalPeriod[] = [
   { id: 'dep4', country: CountryCode.DE, name: 'Weimar Republic', startYear: 1918, endYear: 1933, type: 'political', description: 'The German state between 1918 and 1933.' },
   { id: 'dep5', country: CountryCode.DE, name: 'World War II', startYear: 1939, endYear: 1945, type: 'war', description: 'Global war involving Germany and the Axis powers.' },
   { id: 'dep6', country: CountryCode.DE, name: 'Postwar Germany', startYear: 1945, endYear: 1990, type: 'era', description: 'Period of reconstruction and division into East and West Germany.' },
-  { id: 'dep7', country: CountryCode.DE, name: 'Reunified Germany', startYear: 1990, endYear: 2000, type: 'political', description: 'Period following German reunification.' }
+  { id: 'dep7', country: CountryCode.DE, name: 'Reunified Germany', startYear: 1990, endYear: 2000, type: 'political', description: 'Period following German reunification.' },
 
   // Spain
   { id: 'esp1', country: CountryCode.ES, name: 'Spanish Civil War', startYear: 1936, endYear: 1939, type: 'war', description: 'Military revolt against the Republican government of Spain.' },
