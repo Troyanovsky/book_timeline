@@ -15,10 +15,10 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
 
   const filteredBooks = useMemo(() => {
     return books.filter(book => {
-      const matchesSearch = 
-        book.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      const matchesSearch =
+        book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         book.author.toLowerCase().includes(searchTerm.toLowerCase());
-      
+
       const matchesCountry = filterCountry === 'ALL' || book.country === filterCountry;
       const matchesActive = filterActive ? selectedBookIds.has(book.id) : true;
 
@@ -33,12 +33,12 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
           <BookOpen className="w-6 h-6 text-indigo-600" />
           Chronos Books
         </h1>
-        
+
         <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-          <input 
-            type="text" 
-            placeholder="Search title or author..." 
+          <input
+            type="text"
+            placeholder="Search title or author..."
             className="w-full pl-9 pr-3 py-2 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -46,7 +46,7 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
         </div>
 
         <div className="flex gap-2">
-          <select 
+          <select
             className="flex-1 bg-white border border-slate-300 text-slate-700 text-xs rounded-md px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-indigo-500"
             value={filterCountry}
             onChange={(e) => setFilterCountry(e.target.value)}
@@ -56,8 +56,8 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
-          
-          <button 
+
+          <button
             onClick={() => setFilterActive(!filterActive)}
             className={`p-1.5 rounded-md border ${filterActive ? 'bg-indigo-100 border-indigo-300 text-indigo-700' : 'bg-white border-slate-300 text-slate-500'}`}
             title="Show Selected Only"
@@ -76,14 +76,11 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
           filteredBooks.map(book => {
             const isSelected = selectedBookIds.has(book.id);
             return (
-              <div 
+              <div
                 key={book.id}
                 className={`group flex items-start gap-3 p-3 rounded-lg border transition-all duration-200 cursor-pointer hover:shadow-md ${isSelected ? 'bg-indigo-50 border-indigo-200' : 'bg-white border-slate-100 hover:border-slate-300'}`}
                 onClick={() => onToggleBook(book.id)}
               >
-                <div className="w-10 h-14 flex-shrink-0 bg-slate-200 rounded overflow-hidden shadow-sm">
-                  <img src={book.coverUrl} alt={book.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100" />
-                </div>
                 <div className="flex-1 min-w-0">
                   <h3 className={`text-sm font-semibold truncate ${isSelected ? 'text-indigo-900' : 'text-slate-800'}`}>
                     {book.title}
@@ -106,7 +103,7 @@ const SearchSidebar: React.FC<SearchSidebarProps> = ({ books, selectedBookIds, o
           })
         )}
       </div>
-      
+
       <div className="p-3 border-t border-slate-200 bg-slate-50 text-xs text-center text-slate-500">
         Showing {filteredBooks.length} books
       </div>

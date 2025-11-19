@@ -16,7 +16,6 @@ export interface Book {
   endYear: number;
   pubYear: number;
   description: string;
-  coverUrl: string;
   tags: string[];
 }
 

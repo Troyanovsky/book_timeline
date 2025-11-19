@@ -10,7 +10,6 @@ export const BOOKS: Book[] = [
     endYear: 1832,
     pubYear: 1862,
     description: 'Following the lives of several characters, focusing on the struggles of ex-convict Jean Valjean and his experience of redemption.',
-    coverUrl: 'https://picsum.photos/200/300?random=1',
     tags: ['Classic', 'Revolution', 'Social']
   },
   {
@@ -22,7 +21,6 @@ export const BOOKS: Book[] = [
     endYear: 1820,
     pubYear: 1869,
     description: 'Chronicles the French invasion of Russia and the impact of the Napoleonic era on Tsarist society through the stories of five Russian aristocratic families.',
-    coverUrl: 'https://picsum.photos/200/300?random=2',
     tags: ['War', 'Philosophy', 'Epic']
   },
   {
@@ -34,7 +32,6 @@ export const BOOKS: Book[] = [
     endYear: 1812,
     pubYear: 1813,
     description: 'A romantic novel of manners that follows the character development of Elizabeth Bennet.',
-    coverUrl: 'https://picsum.photos/200/300?random=3',
     tags: ['Romance', 'Satire']
   },
   {
@@ -46,7 +43,6 @@ export const BOOKS: Book[] = [
     endYear: 1793,
     pubYear: 1859,
     description: 'Set in London and Paris before and during the French Revolution.',
-    coverUrl: 'https://picsum.photos/200/300?random=4',
     tags: ['Historical', 'Revolution']
   },
   {
@@ -58,7 +54,6 @@ export const BOOKS: Book[] = [
     endYear: 1873,
     pubYear: 1936,
     description: 'Set in Clayton County and Atlanta, Georgia, during the American Civil War and Reconstruction Era.',
-    coverUrl: 'https://picsum.photos/200/300?random=5',
     tags: ['Civil War', 'Romance']
   },
   {
@@ -70,7 +65,6 @@ export const BOOKS: Book[] = [
     endYear: 1922,
     pubYear: 1925,
     description: 'A portrait of the Jazz Age in all its decadence and excess.',
-    coverUrl: 'https://picsum.photos/200/300?random=6',
     tags: ['Jazz Age', 'Tragedy']
   },
   {
@@ -82,7 +76,6 @@ export const BOOKS: Book[] = [
     endYear: 1918,
     pubYear: 1929,
     description: 'Describes the German soldiers\' extreme physical and mental stress during the war.',
-    coverUrl: 'https://picsum.photos/200/300?random=7',
     tags: ['WWI', 'Anti-war']
   },
   {
@@ -94,7 +87,6 @@ export const BOOKS: Book[] = [
     endYear: 1937,
     pubYear: 1940,
     description: 'It tells the story of Robert Jordan, a young American volunteer attached to a Republican guerrilla unit during the Spanish Civil War.',
-    coverUrl: 'https://picsum.photos/200/300?random=8',
     tags: ['War', 'Adventure']
   },
   {
@@ -106,7 +98,6 @@ export const BOOKS: Book[] = [
     endYear: 1939,
     pubYear: 1939,
     description: 'Set during the Great Depression, the novel focuses on the Joads, a poor family of tenant farmers driven from their Oklahoma home.',
-    coverUrl: 'https://picsum.photos/200/300?random=9',
     tags: ['Depression', 'Social']
   },
   {
@@ -118,7 +109,6 @@ export const BOOKS: Book[] = [
     endYear: 1832,
     pubYear: 1871,
     description: 'A study of provincial life in the fictional Midlands town of Middlemarch.',
-    coverUrl: 'https://picsum.photos/200/300?random=10',
     tags: ['Realism', 'Society']
   },
   {
@@ -130,7 +120,6 @@ export const BOOKS: Book[] = [
     endYear: 1535,
     pubYear: 2009,
     description: 'A fictionalized biography documenting the rapid rise to power of Thomas Cromwell in the court of Henry VIII.',
-    coverUrl: 'https://picsum.photos/200/300?random=11',
     tags: ['Historical', 'Tudor']
   },
   {
@@ -142,7 +131,6 @@ export const BOOKS: Book[] = [
     endYear: 1628,
     pubYear: 1844,
     description: 'Recounts the adventures of a young man named d\'Artagnan after he leaves home to travel to Paris.',
-    coverUrl: 'https://picsum.photos/200/300?random=12',
     tags: ['Adventure', 'Classic']
   }
 ];

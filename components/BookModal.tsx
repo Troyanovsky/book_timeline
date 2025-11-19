@@ -13,32 +13,18 @@ const BookModal: React.FC<BookModalProps> = ({ book, onClose, onRemove }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col md:flex-row animate-in zoom-in-95 duration-200">
-        
-        {/* Image Section */}
-        <div className="md:w-1/3 h-64 md:h-auto relative bg-slate-100">
-          <img 
-            src={book.coverUrl} 
-            alt={book.title} 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden" />
-          <div className="absolute bottom-4 left-4 text-white md:hidden">
-             <h2 className="text-2xl font-bold shadow-black drop-shadow-md">{book.title}</h2>
-             <p className="text-sm opacity-90">{book.author}</p>
-          </div>
-        </div>
+      <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden flex flex-col animate-in zoom-in-95 duration-200">
 
         {/* Content Section */}
-        <div className="md:w-2/3 p-6 md:p-8 flex flex-col relative">
-          <button 
+        <div className="p-6 md:p-8 flex flex-col relative">
+          <button
             onClick={onClose}
             className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-500 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
 
-          <div className="hidden md:block mb-6">
+          <div className="mb-6">
             <h2 className="text-3xl font-bold text-slate-900 mb-1">{book.title}</h2>
             <p className="text-lg text-slate-600 font-medium">{book.author}</p>
           </div>
@@ -84,7 +70,7 @@ const BookModal: React.FC<BookModalProps> = ({ book, onClose, onRemove }) => {
           </div>
 
           <div className="mt-auto flex justify-end gap-3 border-t border-slate-100 pt-4">
-            <button 
+            <button
               onClick={() => {
                 onRemove(book.id);
                 onClose();
@@ -93,7 +79,7 @@ const BookModal: React.FC<BookModalProps> = ({ book, onClose, onRemove }) => {
             >
               Remove from Timeline
             </button>
-            <button 
+            <button
               onClick={onClose}
               className="px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-colors shadow-lg shadow-slate-200"
             >
