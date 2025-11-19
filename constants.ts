@@ -122,7 +122,7 @@ export const BOOKS: Book[] = [
     description: 'A fictionalized biography documenting the rapid rise to power of Thomas Cromwell in the court of Henry VIII.',
     tags: ['Historical', 'Tudor']
   },
-  {
+    {
     id: '12',
     title: 'The Three Musketeers',
     author: 'Alexandre Dumas',
@@ -132,6 +132,61 @@ export const BOOKS: Book[] = [
     pubYear: 1844,
     description: 'Recounts the adventures of a young man named d\'Artagnan after he leaves home to travel to Paris.',
     tags: ['Adventure', 'Classic']
+  },
+  {
+    id: '13',
+    title: 'Wuthering Heights',
+    author: 'Emily Brontë',
+    country: CountryCode.UK,
+    startYear: 1770,
+    endYear: 1802,
+    pubYear: 1847,
+    description: 'A tragic love story set in the Yorkshire moors, following the intense and destructive relationship between Catherine Earnshaw and Heathcliff.',
+    tags: ['Romance', 'Gothic', 'Tragedy']
+  },
+  {
+    id: '14',
+    title: 'One Hundred Years of Solitude',
+    author: 'Gabriel García Márquez',
+    country: CountryCode.CO,
+    startYear: 1900,
+    endYear: 1967,
+    pubYear: 1967,
+    description: 'Multi-generational saga of the Buendía family in the fictional town of Macondo, blending magical realism with Latin American history.',
+    tags: ['Magical Realism', 'Family Saga', 'Latin American']
+  },
+  {
+    id: '15',
+    title: 'Love in the Time of Cholera',
+    author: 'Gabriel García Márquez',
+    country: CountryCode.CO,
+    startYear: 1880,
+    endYear: 1930,
+    pubYear: 1985,
+    description: 'A love story spanning over fifty years between Florentino Ariza and Fermina Daza, set against the backdrop of Caribbean society.',
+    tags: ['Romance', 'Magical Realism', 'Latin American']
+  },
+  {
+    id: '16',
+    title: 'The Moon and Sixpence',
+    author: 'W. Somerset Maugham',
+    country: CountryCode.FR,
+    startYear: 1890,
+    endYear: 1915,
+    pubYear: 1919,
+    description: 'Based on the life of Paul Gauguin, following Charles Strickland who abandons his family to become an artist in Paris and Tahiti.',
+    tags: ['Art', 'Biographical', 'Fiction']
+  },
+  {
+    id: '17',
+    title: 'The Sun Also Rises',
+    author: 'Ernest Hemingway',
+    country: CountryCode.ES,
+    startYear: 1925,
+    endYear: 1925,
+    pubYear: 1926,
+    description: 'Follows a group of American and British expatriates who travel from Paris to Pamplona to watch the bullfights.',
+    tags: ['Lost Generation', 'Modernism', 'War Trauma']
   }
 ];
 
@@ -141,11 +196,14 @@ export const PERIODS: HistoricalPeriod[] = [
   { id: 'fp2', country: CountryCode.FR, name: 'Napoleonic Wars', startYear: 1803, endYear: 1815, type: 'war', description: 'A series of major global conflicts pitted the French Empire against various coalitions.' },
   { id: 'fp3', country: CountryCode.FR, name: 'Bourbon Restoration', startYear: 1815, endYear: 1830, type: 'political', description: 'Return of the House of Bourbon to the throne.' },
   { id: 'fp4', country: CountryCode.FR, name: 'July Monarchy', startYear: 1830, endYear: 1848, type: 'political', description: 'A liberal constitutional monarchy under Louis Philippe I.' },
+  { id: 'fp5', country: CountryCode.FR, name: 'Belle Époque', startYear: 1871, endYear: 1914, type: 'era', description: 'Period of peace and prosperity in France before World War I.' },
 
   // UK
-  { id: 'ukp1', country: CountryCode.UK, name: 'Regency Era', startYear: 1811, endYear: 1820, type: 'era', description: 'A sub-period of the Georgian era, noted for its elegance and achievements in the fine arts.' },
-  { id: 'ukp2', country: CountryCode.UK, name: 'Victorian Era', startYear: 1837, endYear: 1901, type: 'era', description: 'Period of Queen Victoria\'s reign, characterized by industrial expansion and moral strictness.' },
-  { id: 'ukp3', country: CountryCode.UK, name: 'Tudor Period', startYear: 1485, endYear: 1603, type: 'era', description: 'The period between the end of the Wars of the Roses and the accession of James I.' },
+  { id: 'ukp1', country: CountryCode.UK, name: 'Georgian Era', startYear: 1714, endYear: 1820, type: 'era', description: 'Period of the Hanoverian kings, including the Regency sub-period.' },
+  { id: 'ukp2', country: CountryCode.UK, name: 'Regency Era', startYear: 1811, endYear: 1820, type: 'era', description: 'A sub-period of the Georgian era, noted for its elegance and achievements in the fine arts.' },
+  { id: 'ukp3', country: CountryCode.UK, name: 'Victorian Era', startYear: 1837, endYear: 1901, type: 'era', description: 'Period of Queen Victoria\'s reign, characterized by industrial expansion and moral strictness.' },
+  { id: 'ukp4', country: CountryCode.UK, name: 'Tudor Period', startYear: 1485, endYear: 1603, type: 'era', description: 'The period between the end of the Wars of the Roses and the accession of James I.' },
+  { id: 'ukp5', country: CountryCode.UK, name: 'Edwardian Era', startYear: 1901, endYear: 1910, type: 'era', description: 'Period of King Edward VII\'s reign, marked by social change and technological progress.' },
 
   // USA
   { id: 'usp1', country: CountryCode.US, name: 'Civil War', startYear: 1861, endYear: 1865, type: 'war', description: 'War fought between the Union and the Confederacy.' },
@@ -158,9 +216,22 @@ export const PERIODS: HistoricalPeriod[] = [
   { id: 'rup2', country: CountryCode.RU, name: 'Reign of Nicholas I', startYear: 1825, endYear: 1855, type: 'political', description: 'Reactionary period marked by geographical expansion and economic stagnation.' },
 
   // Germany
-  { id: 'dep1', country: CountryCode.DE, name: 'World War I', startYear: 1914, endYear: 1918, type: 'war', description: 'Global war originating in Europe.' },
-  { id: 'dep2', country: CountryCode.DE, name: 'Weimar Republic', startYear: 1918, endYear: 1933, type: 'political', description: 'The German state between 1918 and 1933.' },
+  { id: 'dep1', country: CountryCode.DE, name: 'German Empire', startYear: 1871, endYear: 1918, type: 'political', description: 'Period of the German Empire under Kaiser Wilhelm I and II.' },
+  { id: 'dep2', country: CountryCode.DE, name: 'World War I', startYear: 1914, endYear: 1918, type: 'war', description: 'Global war originating in Europe.' },
+  { id: 'dep3', country: CountryCode.DE, name: 'Weimar Republic', startYear: 1918, endYear: 1933, type: 'political', description: 'The German state between 1918 and 1933.' },
 
   // Spain
-  { id: 'esp1', country: CountryCode.ES, name: 'Spanish Civil War', startYear: 1936, endYear: 1939, type: 'war', description: 'Military revolt against the Republican government of Spain.' }
+  { id: 'esp1', country: CountryCode.ES, name: 'Spanish Civil War', startYear: 1936, endYear: 1939, type: 'war', description: 'Military revolt against the Republican government of Spain.' },
+  { id: 'esp2', country: CountryCode.ES, name: 'Generation of \'27', startYear: 1923, endYear: 1936, type: 'era', description: 'Influential group of poets, writers, and artists in Spain.' },
+
+  // Colombia
+  { id: 'cop1', country: CountryCode.CO, name: 'Thousand Days\' War', startYear: 1899, endYear: 1902, type: 'war', description: 'Civil war between Liberal and Conservative parties.' },
+  { id: 'cop2', country: CountryCode.CO, name: 'Colombian Conservative Era', startYear: 1886, endYear: 1930, type: 'political', description: 'Period of Conservative Party dominance.' },
+  { id: 'cop3', country: CountryCode.CO, name: 'La Violencia', startYear: 1948, endYear: 1958, type: 'war', description: 'Period of civil conflict between Liberal and Conservative parties.' },
+  { id: 'cop4', country: CountryCode.CO, name: 'National Front', startYear: 1958, endYear: 1974, type: 'political', description: 'Power-sharing agreement between Liberal and Conservative parties.' },
+
+  // Mexico
+  { id: 'mep1', country: CountryCode.MX, name: 'Porfiriato', startYear: 1876, endYear: 1911, type: 'political', description: 'Era of Porfirio Díaz\'s authoritarian rule.' },
+  { id: 'mep2', country: CountryCode.MX, name: 'Mexican Revolution', startYear: 1910, endYear: 1920, type: 'war', description: 'Major armed struggle that fundamentally transformed Mexican culture and government.' },
+  { id: 'mep3', country: CountryCode.MX, name: 'Maximato', startYear: 1928, endYear: 1934, type: 'political', description: 'Period of transitional presidents under Plutarco Elías Calles\' influence.' }
 ];

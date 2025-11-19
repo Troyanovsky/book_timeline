@@ -4,16 +4,18 @@ export enum CountryCode {
   RU = 'Russia',
   US = 'United States',
   DE = 'Germany',
-  ES = 'Spain'
+  ES = 'Spain',
+  CO = 'Colombia',
+  MX = 'Mexico'
 }
 
 export interface Book {
   id: string;
   title: string;
   author: string;
-  country: CountryCode;
-  startYear: number;
-  endYear: number;
+  country: CountryCode; // the country where the book is primarily set
+  startYear: number; // the year the book's story events begin
+  endYear: number; // the year the book's story events end
   pubYear: number;
   description: string;
   tags: string[];
