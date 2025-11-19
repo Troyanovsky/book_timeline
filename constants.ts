@@ -187,6 +187,50 @@ export const BOOKS: Book[] = [
     pubYear: 1926,
     description: 'Follows a group of American and British expatriates who travel from Paris to Pamplona to watch the bullfights.',
     tags: ['Lost Generation', 'Modernism', 'War Trauma']
+  },
+  {
+    id: '18',
+    title: 'Buddenbrooks',
+    author: 'Thomas Mann',
+    country: CountryCode.DE,
+    startYear: 1835,
+    endYear: 1876,
+    pubYear: 1901,
+    description: 'Chronicles the decline of a wealthy German merchant family over four generations, exploring themes of business, art, and morality.',
+    tags: ['Family Saga', 'Decline', 'German Literature']
+  },
+  {
+    id: '19',
+    title: 'Berlin Alexanderplatz',
+    author: 'Alfred Döblin',
+    country: CountryCode.DE,
+    startYear: 1927,
+    endYear: 1928,
+    pubYear: 1929,
+    description: 'Tells the story of Franz Biberkopf, a small-time criminal who tries to reform in Weimar-era Berlin.',
+    tags: ['Modernism', 'Urban', 'Crime']
+  },
+  {
+    id: '20',
+    title: 'The Tin Drum (Die Blechtrommel)',
+    author: 'Günter Grass',
+    country: CountryCode.DE,
+    startYear: 1924,
+    endYear: 1954,
+    pubYear: 1959,
+    description: 'A surreal novel about Oskar Matzerath, who decides to stop growing at age three and communicates through his tin drum.',
+    tags: ['Magical Realism', 'WWII', 'Postwar']
+  },
+  {
+    id: '21',
+    title: 'The Reader (Der Vorleser)',
+    author: 'Bernhard Schlink',
+    country: CountryCode.DE,
+    startYear: 1958,
+    endYear: 1995,
+    pubYear: 1995,
+    description: 'Explores the relationship between a young man and an older woman, later revealing her past as a Nazi guard.',
+    tags: ['Postwar', 'Holocaust', 'Moral']
   }
 ];
 
@@ -216,9 +260,13 @@ export const PERIODS: HistoricalPeriod[] = [
   { id: 'rup2', country: CountryCode.RU, name: 'Reign of Nicholas I', startYear: 1825, endYear: 1855, type: 'political', description: 'Reactionary period marked by geographical expansion and economic stagnation.' },
 
   // Germany
-  { id: 'dep1', country: CountryCode.DE, name: 'German Empire', startYear: 1871, endYear: 1918, type: 'political', description: 'Period of the German Empire under Kaiser Wilhelm I and II.' },
-  { id: 'dep2', country: CountryCode.DE, name: 'World War I', startYear: 1914, endYear: 1918, type: 'war', description: 'Global war originating in Europe.' },
-  { id: 'dep3', country: CountryCode.DE, name: 'Weimar Republic', startYear: 1918, endYear: 1933, type: 'political', description: 'The German state between 1918 and 1933.' },
+  { id: 'dep1', country: CountryCode.DE, name: 'German Confederation', startYear: 1815, endYear: 1866, type: 'political', description: 'Association of German-speaking states created by the Congress of Vienna.' },
+  { id: 'dep2', country: CountryCode.DE, name: 'German Empire', startYear: 1871, endYear: 1918, type: 'political', description: 'Period of the German Empire under Kaiser Wilhelm I and II.' },
+  { id: 'dep3', country: CountryCode.DE, name: 'World War I', startYear: 1914, endYear: 1918, type: 'war', description: 'Global war originating in Europe.' },
+  { id: 'dep4', country: CountryCode.DE, name: 'Weimar Republic', startYear: 1918, endYear: 1933, type: 'political', description: 'The German state between 1918 and 1933.' },
+  { id: 'dep5', country: CountryCode.DE, name: 'World War II', startYear: 1939, endYear: 1945, type: 'war', description: 'Global war involving Germany and the Axis powers.' },
+  { id: 'dep6', country: CountryCode.DE, name: 'Postwar Germany', startYear: 1945, endYear: 1990, type: 'era', description: 'Period of reconstruction and division into East and West Germany.' },
+  { id: 'dep7', country: CountryCode.DE, name: 'Reunified Germany', startYear: 1990, endYear: 2000, type: 'political', description: 'Period following German reunification.' }
 
   // Spain
   { id: 'esp1', country: CountryCode.ES, name: 'Spanish Civil War', startYear: 1936, endYear: 1939, type: 'war', description: 'Military revolt against the Republican government of Spain.' },
