@@ -96,7 +96,7 @@ const Timeline: React.FC<TimelineProps> = ({
         className="relative"
       >
         {/* Background Grid */}
-        <svg className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <svg className="absolute top-0 w-full h-full pointer-events-none" style={{ left: '40px' }}>
           {yearRange.map(year => (
             <React.Fragment key={year}>
               <line
@@ -118,7 +118,7 @@ const Timeline: React.FC<TimelineProps> = ({
             <div
               key={year}
               className="absolute text-xs font-semibold text-slate-500 select-none"
-              style={{ left: getX(year, minYear, zoomLevel), transform: 'translateX(-50%)' }}
+              style={{ left: getX(year, minYear, zoomLevel) + 40 }}
             >
               {year}
             </div>
