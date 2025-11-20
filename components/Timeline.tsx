@@ -33,6 +33,18 @@ const Timeline: React.FC<TimelineProps> = ({
   const minYear = 1200;
   const maxYear = 2020;
   const yearRange = d3.range(minYear, maxYear + 10, 10);
+
+  // Center view around 1950 on-load
+  useEffect(() => {
+    if (containerRef.current) {
+      const centerYear = 1950;
+      const centerPosition = getX(centerYear, minYear, zoomLevel);
+      const containerWidth = containerRef.current.clientWidth;
+      const scrollLeft = centerPosition - containerWidth / 2;
+      
+      containerRef.current.scrollLeft = Math.max(0, scrollLeft);
+    }
+  }, [zoomLevel]);
   
   // Process Data
   const groups = useMemo(() => 
