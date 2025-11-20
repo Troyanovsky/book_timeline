@@ -30,8 +30,8 @@ const Timeline: React.FC<TimelineProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   
   // Calculate total range based on data, or fixed? Fixed is safer for scrolling.
-  const minYear = 1750;
-  const maxYear = 2000;
+  const minYear = 1200;
+  const maxYear = 2020;
   const yearRange = d3.range(minYear, maxYear + 10, 10);
   
   // Process Data
@@ -57,6 +57,8 @@ const Timeline: React.FC<TimelineProps> = ({
     [CountryCode.RU]: 'bg-green-100 text-green-800 border-green-300',
     [CountryCode.DE]: 'bg-gray-200 text-gray-800 border-gray-400',
     [CountryCode.ES]: 'bg-yellow-100 text-yellow-800 border-yellow-300',
+    [CountryCode.CO]: 'bg-red-100 text-red-800 border-red-300',
+    [CountryCode.MX]: 'bg-blue-100 text-blue-800 border-blue-300',
   };
   
   const countryBookColor: Record<string, string> = {
@@ -66,6 +68,8 @@ const Timeline: React.FC<TimelineProps> = ({
     [CountryCode.RU]: '#86efac',
     [CountryCode.DE]: '#d1d5db',
     [CountryCode.ES]: '#fde047',
+    [CountryCode.CO]: '#fecaca',
+    [CountryCode.MX]: '#bfdbfe',
   };
 
   return (

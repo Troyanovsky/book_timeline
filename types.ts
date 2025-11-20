@@ -7,6 +7,7 @@ export enum CountryCode {
   ES = 'Spain',
   CO = 'Colombia',
   MX = 'Mexico'
+  // need to update colors in Timeline.tsx if adding more countries
 }
 
 export interface Book {
