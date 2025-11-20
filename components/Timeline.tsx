@@ -136,20 +136,17 @@ const Timeline: React.FC<TimelineProps> = ({
           {groups.map(group => (
             <div
               key={group.country}
-              className="relative border-b border-slate-100 group"
+              className="relative border-b border-slate-100 group flex"
               style={{ height: group.height }}
             >
-              {/* Sticky Country Label (Vertical) - Simulated by absolute positioning on left of scroll view if possible?
-                  Since we are inside a horizontal scroll, standard sticky left is tricky without grid.
-                  We will place a label at the start of the viewable area or just at x=0 for now.
-               */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-slate-50 border-r border-slate-200 z-10 flex items-center justify-center">
+              {/* Sticky Country Label */}
+              <div className="sticky left-0 z-10 w-10 bg-slate-50 border-r border-slate-200 flex-shrink-0 flex items-center justify-center">
                 <span className="transform -rotate-90 text-xs font-bold text-slate-400 whitespace-nowrap tracking-widest uppercase">
                   {group.country}
                 </span>
               </div>
 
-              <div className="ml-10 relative h-full">
+              <div className="flex-1 relative h-full min-w-0">
                 {/* Historical Periods Row */}
                 {group.periods.length > 0 && (
                   <div className="absolute w-full h-8 top-0 overflow-hidden">
