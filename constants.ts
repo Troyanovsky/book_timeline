@@ -122,7 +122,7 @@ export const BOOKS: Book[] = [
     description: 'A fictionalized biography documenting the rapid rise to power of Thomas Cromwell in the court of Henry VIII.',
     tags: ['Historical', 'Tudor']
   },
-    {
+  {
     id: '12',
     title: 'The Three Musketeers',
     author: 'Alexandre Dumas',
@@ -236,7 +236,7 @@ export const BOOKS: Book[] = [
 
 export const PERIODS: HistoricalPeriod[] = [
   // France
-  { id: 'fp1', country: CountryCode.FR, name: 'French Revolution', startYear: 1789, endYear: 1799, type: 'war', description: 'Period of radical political and societal change in France.' },
+  { id: 'fp1', country: CountryCode.FR, name: 'French Revolution', startYear: 1789, endYear: 1799, type: 'war', description: 'Period of radical political and societal change in France.', detailedDescription: 'The French Revolution was a period of radical political and societal change in France that began with the Estates General of 1789 and ended with the formation of the French Consulate in November 1799. Many of its ideas are considered fundamental principles of liberal democracy, while phrases like liberté, égalité, fraternité reappeared in other revolts, such as the 1917 Russian Revolution.' },
   { id: 'fp2', country: CountryCode.FR, name: 'Napoleonic Wars', startYear: 1803, endYear: 1815, type: 'war', description: 'A series of major global conflicts pitted the French Empire against various coalitions.' },
   { id: 'fp3', country: CountryCode.FR, name: 'Bourbon Restoration', startYear: 1815, endYear: 1830, type: 'political', description: 'Return of the House of Bourbon to the throne.' },
   { id: 'fp4', country: CountryCode.FR, name: 'July Monarchy', startYear: 1830, endYear: 1848, type: 'political', description: 'A liberal constitutional monarchy under Louis Philippe I.' },
@@ -245,12 +245,12 @@ export const PERIODS: HistoricalPeriod[] = [
   // UK
   { id: 'ukp1', country: CountryCode.UK, name: 'Georgian Era', startYear: 1714, endYear: 1820, type: 'era', description: 'Period of the Hanoverian kings, including the Regency sub-period.' },
   { id: 'ukp2', country: CountryCode.UK, name: 'Regency Era', startYear: 1811, endYear: 1820, type: 'era', description: 'A sub-period of the Georgian era, noted for its elegance and achievements in the fine arts.' },
-  { id: 'ukp3', country: CountryCode.UK, name: 'Victorian Era', startYear: 1837, endYear: 1901, type: 'era', description: 'Period of Queen Victoria\'s reign, characterized by industrial expansion and moral strictness.' },
+  { id: 'ukp3', country: CountryCode.UK, name: 'Victorian Era', startYear: 1837, endYear: 1901, type: 'era', description: 'Period of Queen Victoria\'s reign, characterized by industrial expansion and moral strictness.', detailedDescription: 'The Victorian era was the period of Queen Victoria\'s reign, from 20 June 1837 until her death on 22 January 1901. The era followed the Georgian period and preceded the Edwardian period, and its later half overlaps with the first part of the Belle Époque era of Continental Europe.' },
   { id: 'ukp4', country: CountryCode.UK, name: 'Tudor Period', startYear: 1485, endYear: 1603, type: 'era', description: 'The period between the end of the Wars of the Roses and the accession of James I.' },
   { id: 'ukp5', country: CountryCode.UK, name: 'Edwardian Era', startYear: 1901, endYear: 1910, type: 'era', description: 'Period of King Edward VII\'s reign, marked by social change and technological progress.' },
 
   // USA
-  { id: 'usp1', country: CountryCode.US, name: 'Civil War', startYear: 1861, endYear: 1865, type: 'war', description: 'War fought between the Union and the Confederacy.' },
+  { id: 'usp1', country: CountryCode.US, name: 'Civil War', startYear: 1861, endYear: 1865, type: 'war', description: 'War fought between the Union and the Confederacy.', detailedDescription: 'The American Civil War was a civil war in the United States between the Union and the Confederacy, which had been formed by states that had seceded from the Union. The central cause of the war was the dispute over whether slavery would be permitted to expand into the western territories, leading to more slave states, or be prevented from doing so, which many believed would place slavery on a course of ultimate extinction.' },
   { id: 'usp2', country: CountryCode.US, name: 'Reconstruction', startYear: 1865, endYear: 1877, type: 'political', description: 'Period following the Civil War of rebuilding the South.' },
   { id: 'usp3', country: CountryCode.US, name: 'Roaring Twenties', startYear: 1920, endYear: 1929, type: 'era', description: 'A period of economic prosperity and cultural dynamism.' },
   { id: 'usp4', country: CountryCode.US, name: 'Great Depression', startYear: 1929, endYear: 1939, type: 'era', description: 'Severe worldwide economic depression.' },

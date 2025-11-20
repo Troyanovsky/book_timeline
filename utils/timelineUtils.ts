@@ -11,42 +11,33 @@ export const GROUP_PADDING = 20;
 // Helper to check if a book overlaps with a lane's last book
 const doesOverlap = (book: Book, lastBookInLane: Book) => {
   // Add a small buffer (e.g. 1 year) for visual spacing
-  return book.startYear < lastBookInLane.endYear + 2; 
+  return book.startYear < lastBookInLane.endYear + 2;
 };
 
 export const processDataIntoGroups = (
   books: Book[],
   periods: HistoricalPeriod[],
   selectedBookIds: Set<string>,
-  visibleCountries: Set<CountryCode> | null // null means all
+  visibleCountries: Set<CountryCode> | null, // null means all
+  zoomLevel: number
 ): CountryGroup[] => {
-  
+
   // 1. Filter active books
   const activeBooks = books.filter(b => selectedBookIds.has(b.id));
-  
+
   // 2. Identify relevant countries (either filtered or from active books)
-  // If specific countries are selected in filter, use those.
-  // Otherwise, show countries that have at least one active book, OR show all if no filter?
-  // Let's go with: Show all countries that have at least one active book OR period.
-  
   const countriesWithBooks = new Set(activeBooks.map(b => b.country));
-  
-  // To make the chart useful, we usually want to see the periods even if no book is there yet? 
-  // Let's restrict to countries present in the filtered view or active books.
+
   let targetCountries = Array.from(Object.values(CountryCode));
-  
+
   if (visibleCountries && visibleCountries.size > 0) {
     targetCountries = targetCountries.filter(c => visibleCountries.has(c));
   } else {
-      // If no specific country filter, only show countries that have active books to keep view clean.
-      // If no books selected, show nothing or show all? 
-      // Strategy: If selectedBookIds is empty, show nothing. If not empty, show relevant countries.
-      if (selectedBookIds.size > 0) {
-        targetCountries = targetCountries.filter(c => countriesWithBooks.has(c));
-      } else {
-        // Empty state
-        return [];
-      }
+    if (selectedBookIds.size > 0) {
+      targetCountries = targetCountries.filter(c => countriesWithBooks.has(c));
+    } else {
+      return [];
+    }
   }
 
   let currentYOffset = 0;
@@ -58,36 +49,60 @@ export const processDataIntoGroups = (
     // Sort by start year
     countryBooks.sort((a, b) => a.startYear - b.startYear);
 
-    // Calculate Lanes (Greedy packing)
-    const lanes: LaneData[] = [];
-    
+    // Calculate Lanes (Greedy packing with visual width)
+    // We need to track the "visual" end year of the last book in each lane
+    // to prevent text from overlapping the next book.
+    const lanes: { laneIndex: number; books: Book[]; visualEndYear: number }[] = [];
+
     countryBooks.forEach(book => {
+      // Estimate text width: approx 7px per char + 20px padding
+      const textWidthPx = book.title.length * 7 + 20;
+      const bookDurationPx = (book.endYear - book.startYear) * zoomLevel;
+
+      // The visual width is the max of the actual bar width and the text width
+      const visualWidthPx = Math.max(bookDurationPx, textWidthPx);
+
+      // Convert visual width back to years to find the "visual end year"
+      const visualDurationYears = visualWidthPx / zoomLevel;
+      const visualEndYear = book.startYear + visualDurationYears;
+
       let placed = false;
       for (let i = 0; i < lanes.length; i++) {
-        const lastBook = lanes[i].books[lanes[i].books.length - 1];
-        if (!doesOverlap(book, lastBook)) {
+        // Check overlap against the VISUAL end year of the last book
+        // Add a small buffer (e.g. 2 years) for spacing
+        if (book.startYear >= lanes[i].visualEndYear + 0.5) {
           lanes[i].books.push(book);
+          lanes[i].visualEndYear = visualEndYear;
           placed = true;
           break;
         }
       }
       if (!placed) {
-        lanes.push({ laneIndex: lanes.length, books: [book] });
+        lanes.push({
+          laneIndex: lanes.length,
+          books: [book],
+          visualEndYear: visualEndYear
+        });
       }
     });
+
+    // Convert back to standard LaneData
+    const finalLanes: LaneData[] = lanes.map(l => ({
+      laneIndex: l.laneIndex,
+      books: l.books
+    }));
 
     // Get Periods for this country
     const countryPeriods = periods.filter(p => p.country === country);
 
     // Calculate Height
-    // 1 row for Periods (if any) + n rows for book lanes
     const periodHeight = countryPeriods.length > 0 ? PERIOD_ROW_HEIGHT : 0;
-    const lanesHeight = Math.max(lanes.length * ROW_HEIGHT, ROW_HEIGHT); // Min 1 row height for empty state visual
+    const lanesHeight = Math.max(finalLanes.length * ROW_HEIGHT, ROW_HEIGHT);
     const totalHeight = periodHeight + lanesHeight + GROUP_PADDING;
 
     groups.push({
       country,
-      lanes,
+      lanes: finalLanes,
       periods: countryPeriods,
       height: totalHeight,
       yOffset: currentYOffset

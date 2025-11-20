@@ -30,6 +30,7 @@ export interface HistoricalPeriod {
   endYear: number;
   type: 'era' | 'war' | 'political';
   description: string;
+  detailedDescription?: string;
 }
 
 export interface LaneData {
