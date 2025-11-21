@@ -93,7 +93,14 @@ export const processDataIntoGroups = (
     }));
 
     // Get Periods for this country
-    const countryPeriods = periods.filter(p => p.country === country);
+    const countryPeriods = periods
+      .filter(p => p.country === country)
+      // Sort by duration (longest first) so shorter periods render on top
+      .sort((a, b) => {
+        const durationA = a.endYear - a.startYear;
+        const durationB = b.endYear - b.startYear;
+        return durationB - durationA; // Descending order (longest first)
+      });
 
     // Calculate Height
     const periodHeight = countryPeriods.length > 0 ? PERIOD_ROW_HEIGHT : 0;
